@@ -16,7 +16,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/add")
+    @PostMapping("/createAccount")
     public String add(@RequestBody User user) {
         userService.saveUser(user);
         return "New user is added";
