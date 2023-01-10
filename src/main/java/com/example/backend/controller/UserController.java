@@ -22,10 +22,10 @@ public class UserController {
         return "New user is added";
     }
 
-    @PostMapping("/login")
-    public User login(@RequestBody User user){
-        return userService.login(user);
-    }
+//    @PostMapping("/login")
+//    public User login(@RequestBody User user){
+//        return userService.login(user);
+//    }
 
     @GetMapping("/getUserById/{id}")
     public Optional<User> getUserById(@PathVariable int id){

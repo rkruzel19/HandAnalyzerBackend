@@ -1,20 +1,21 @@
 package com.example.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Tournament {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String startTime;
     private String endTime;
     private String duration;
-//    private String hands;
+    private String userId;
+    @Transient
+    private List<Hand> hands;
 
     public Tournament() {
     }
@@ -49,5 +50,21 @@ public class Tournament {
 
     public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public List<Hand> getHands() {
+        return hands;
+    }
+
+    public void setHands(List<Hand> hands) {
+        this.hands = hands;
     }
 }

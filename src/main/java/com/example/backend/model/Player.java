@@ -9,12 +9,14 @@ import jakarta.persistence.Id;
 public class Player {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int stackSize;
     private String wholeCards;
     private String seatPosition;
     private String handPosition;
+    private String handId;
+    private String displayName;
 
     public Player() {
     }
@@ -57,5 +59,21 @@ public class Player {
 
     public void setHandPosition(String handPosition) {
         this.handPosition = handPosition;
+    }
+
+    public String getHandId() {
+        return handId;
+    }
+
+    public void setHandId(String handId) {
+        this.handId = handId;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 }
