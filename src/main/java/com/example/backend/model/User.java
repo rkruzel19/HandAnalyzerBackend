@@ -1,11 +1,9 @@
 package com.example.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class User {
@@ -18,6 +16,8 @@ public class User {
     private String email;
     private String userName;
     private String password;
+    @Transient
+    private List<Tournament> tournaments;
 //    private Date birthday;
 
     public User() {
@@ -71,7 +71,15 @@ public class User {
         this.password = password;
     }
 
-//    public Date getBirthday() {
+    public List<Tournament> getTournaments() {
+        return tournaments;
+    }
+
+    public void setTournaments(List<Tournament> tournaments) {
+        this.tournaments = tournaments;
+    }
+
+    //    public Date getBirthday() {
 //        return birthday;
 //    }
 //
